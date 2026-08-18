@@ -88,9 +88,9 @@ int main() {
     int t = 0;
     while(t < Bits.size() && (Bits.size()-t) >= 4) {
         isFlagStr[t] = true;
-        isFlagStr[t+1] = false;
+        //isFlagStr[t+1] = false;
         isFlagStr[t+2] = true;
-        isFlagStr[t+3] = false;
+        //isFlagStr[t+3] = false;
         t += 4;
     }
 
