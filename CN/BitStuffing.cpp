@@ -34,19 +34,15 @@ int main() {
 
     vector<string> Bits;
 
-    // Block index -> positions of stuffed bits
-    unordered_map<int, vector<int>> place;
-
     string Bit;
 
-    // Get input
     cout << "Enter bits: ";
     cin >> Bit;
 
     int n = Bit.size();
     int N = n;
 
-    // Divide bits into blocks
+    // divide bits into blocks
     bool flag = isFlag(Bit);
 
     if(flag) {
@@ -79,7 +75,7 @@ int main() {
         Bits.push_back(Bit);
     }
 
-    // Debugging the vector
+    // debugging the vector
     for(string x : Bits) {
         cout << "#" << x << " ";
     } 
@@ -98,7 +94,6 @@ int main() {
 
     int k = Bits.size();
 
-    // Process only DATA blocks
     for(int i = 0; i < k; i++) {
         if(flag && isFlagStr[i]) {
             i++;
@@ -120,13 +115,7 @@ int main() {
 
             if(count == 5) {
 
-                // Insert stuffed 0
                 suffBit(Bits[i], j);
-
-                // Store position of inserted 0
-                place[i].push_back(j + 1);
-
-                // Move back so inserted bit is not counted
                 j--;
 
                 m++;
@@ -145,38 +134,6 @@ int main() {
     }
 
     cout << endl;
-
-    // Show stuffed bits
-    cout << "        ";
-
-    for(int i = 0; i < Bits.size(); i++) {
-
-        if(i % 2 == 0) {
-            cout << "        ";
-        }
-        else {
-
-            for(int j = 0; j < Bits[i].size(); j++) {
-
-                bool stuffed = false;
-
-                for(int pos : place[i]) {
-
-                    if(pos == j) {
-                        stuffed = true;
-                        break;
-                    }
-                }
-
-                if(stuffed)
-                    cout << "^";
-                else
-                    cout << " ";
-            }
-        }
-
-        cout << " ";
-    }
 
     return 0;
 }
