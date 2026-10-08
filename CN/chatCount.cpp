@@ -13,7 +13,7 @@ int main() {
     cin >> Bit;
 
     int n = Bit.size();
-    cout << "char Count: " << n +1;
+    cout << "char Count: " << n + 1 << endl;
     
     return 0;
 }

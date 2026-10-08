@@ -7,12 +7,12 @@ using namespace std;
 
 int main() {
     vector<int> DATA;
-    vector<int> Diviser;
+    vector<int> Divisor;
     string Data, Div;
 
     cout << "Enter the DATA: ";
     cin >> Data;
-    cout << "Enter Diviser: ";
+    cout << "Enter Divisor: ";
     cin >> Div;
 
     for(char x: Data) {
@@ -29,9 +29,9 @@ int main() {
 
     for(char x: Div) {
         if(x == '0') {
-            Diviser.push_back(0);
+            Divisor.push_back(0);
         } else if (x == '1') {
-            Diviser.push_back(1);
+            Divisor.push_back(1);
         } else {
             cout << "Invalid Input" << endl;
             return 0;
@@ -41,15 +41,15 @@ int main() {
 
     vector<int> Temp = DATA;
 
-    int n = Diviser.size();
+    int n = Divisor.size();
 
     cout << "DATA bits: ";
     for(int x : DATA) {
         cout << x;
     }
-    cout << endl << "Diviser: ";
+    cout << endl << "Divisor: ";
 
-    for(int x : Diviser) {
+    for(int x : Divisor) {
         cout << x;
     }
     
@@ -83,7 +83,7 @@ int main() {
             for(int j=0; j<i; j++) {
                 cout << " ";
             }
-            for(int x : Diviser) {
+            for(int x : Divisor) {
                 cout << x;
             }
             cout << endl;
@@ -98,7 +98,7 @@ int main() {
             }
 
             for(int j = 0; j < n; j++) {
-                Temp[i + j] = Temp[i + j] ^ Diviser[j];
+                Temp[i + j] = Temp[i + j] ^ Divisor[j];
                 cout << Temp[i + j];
             }
 
